@@ -22,7 +22,7 @@ $categorias = $categoriaDAO->listar();
 	</div>
 </div>
 <div class="row">
-	<table class="table table-hover table-bordered table-striped">
+	<table class="table table-hover table-bordered table-striped table-responsive-lg">
 		<thead>
 			<tr>
 				<th>#ID</th>
@@ -36,8 +36,12 @@ $categorias = $categoriaDAO->listar();
 				<td><?= $categoria->getId() ?></td>
 				<td><?= $categoria->getNome() ?></td>
 				<td>
-					<a href="form_categoria.php?id=<?= $categoria->getId() ?>">Editar</a> | 
-					<a href="controle_categoria.php?acao=deletar&id=<?= $categoria->getId() ?>" onclick="return confirm('Deseja realmente excluir?')">Excluir</a>
+					<a href="form_categoria.php?id=<?= $categoria->getId() ?>"  class="btn btn-warning">
+						<i class="fas fa-edit"></i>
+					</a>
+					<a href="controle_categoria.php?acao=deletar&id=<?= $categoria->getId() ?>" onclick="return confirm('Deseja realmente excluir?')" class="btn btn-danger">
+						<i class="fas fa-trash-alt"></i>
+					</a>
 				</td>
 			</tr>
 			<?php } ?>
