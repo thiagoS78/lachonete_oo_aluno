@@ -129,10 +129,31 @@
 					Imagens cadastradas
 				</div>
 				<div class="card-body owl-carousel owl-theme">
-					<?php foreach($imagens as $imagem): ?>
-						<img src="<?= $imagem->getCaminho(); ?>" class="img-thumbnail item" width="150px">
-					<?php endforeach; ?>
 				</div>
+				<div id="carouselExampleInterval" class="carousel slide" data-ride="carousel">
+				  <div class="carousel-inner">
+				  	<?php 
+				  	$n = 0;
+				  	foreach($imagens as $imagem): ?>
+						<div class="carrousel-item <?= ($n == 0 ? 'active' : '') ?>">
+							<img src="<?= $imagem->getCaminho(); ?>" class="d-block " style="width: 500px; height: 400px;">
+						</div>
+					<?php
+					$n++;
+					endforeach; ?>
+				    </div>
+				  </div>
+				  <a class="carousel-control-prev" href="#carouselExampleInterval" role="button" data-slide="prev">
+				    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+				    <span class="sr-only">Previous</span>
+				  </a>
+				  <a class="carousel-control-next" href="#carouselExampleInterval" role="button" data-slide="next">
+				    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+				    <span class="sr-only">Next</span>
+				  </a>
+</div>
+
+		
 			</div>
 		</div>
 	<?php endif; ?>
